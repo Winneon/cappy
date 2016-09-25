@@ -6,9 +6,12 @@ import path from 'path'
 class Window {
   create () {
     let opts = {
-      'maximizable': false,
-      'show': false,
-      'title': 'cappy'
+      maximizable: false,
+      resizable: false,
+      show: false,
+      title: 'cappy',
+      width: 800,
+      height: 400
     }
 
     if (process.platform === 'darwin') {
@@ -19,6 +22,7 @@ class Window {
 
     this.mainWindow = new BrowserWindow(opts)
     this.mainWindow.loadURL('file:///' + path.join(__dirname, '..', 'static', 'index.html'))
+    // this.mainWindow.webContents.openDevTools()
   }
 }
 

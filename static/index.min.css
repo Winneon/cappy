@@ -10,3 +10,9 @@ div.titlebar {
   height: 36px;
   -webkit-user-select: none;
   -webkit-app-region: drag; }
+
+div.sidebar {
+  border-right: 1px solid #E6E6E6;
+  width: 200px;
+  height: calc(100% - 37px);
+  float: left; }
