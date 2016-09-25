@@ -7,7 +7,8 @@ class Window {
   create () {
     let opts = {
       'maximizable': false,
-      'show': false
+      'show': false,
+      'title': 'cappy'
     }
 
     if (process.platform === 'darwin') {

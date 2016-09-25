@@ -10,5 +10,5 @@ const SourceMap = require('source-map-support')
 const Main = require('./lib/Main').default
 SourceMap.install()
 
-// Entry point
+// Entry Point
 new Main()
