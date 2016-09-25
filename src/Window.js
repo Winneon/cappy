@@ -5,7 +5,10 @@ import path from 'path'
 
 class Window {
   create () {
-    let opts = { }
+    let opts = {
+      'maximizable': false,
+      'show': false
+    }
 
     if (process.platform === 'darwin') {
       opts.titleBarStyle = 'hidden-inset'
@@ -14,12 +17,7 @@ class Window {
     }
 
     this.mainWindow = new BrowserWindow(opts)
-
-    this.mainWindow.on('closed', () => {
-      this.mainWindow = undefined
-    })
-
-    this.mainWindow.loadURL('file:///' + path.join(__dirname, 'static', 'index.html'))
+    this.mainWindow.loadURL('file:///' + path.join(__dirname, '..', 'static', 'index.html'))
   }
 }
 

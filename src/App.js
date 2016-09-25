@@ -14,10 +14,12 @@ class App {
     this.window = new Window()
   }
 
-  register (listener) {
-    this.app.removeAllListeners(listener.name)
+  register (listener, obj) {
+    let listen = !obj ? this.app : obj
 
-    this.app.on(listener.name, (...args) => {
+    listen.removeAllListeners(listener.name)
+
+    listen.on(listener.name, (...args) => {
       listener.onEvent(this, args)
     })
   }
