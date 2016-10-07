@@ -32,11 +32,12 @@
     "webpack": "^1.0.1"
   },
   "scripts": {
-    "build": "NODE_ENV=production webpack",
-    "dev": "webpack",
+    "build": "NODE_ENV=production npm run webpack",
+    "dev": "npm run webpack",
     "pack": "npm run build && npm run sass && build --dir",
     "postinstall": "install-app-deps",
     "sass": "node-sass --include-path sass --output-style compressed sass/base.scss app/dist/bundle.css",
-    "start": "npm run dev && concurrently --kill-others --raw \"watch 'npm run sass' sass\" \"electron app\""
+    "start": "npm run dev && concurrently --kill-others --raw \"watch 'npm run sass' sass\" \"electron app\"",
+    "webpack": "webpack && node native/compile.js"
   }
 }
