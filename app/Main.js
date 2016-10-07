@@ -8,6 +8,7 @@ import WindowAllClosed from './Listeners/WindowAllClosed'
 
 class Main {
   constructor () {
+    console.log('yeh')
     this.app = new App()
 
     this.app.register(new Activate())

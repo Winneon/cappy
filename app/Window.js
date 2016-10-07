@@ -21,8 +21,8 @@ class Window {
     }
 
     this.mainWindow = new BrowserWindow(opts)
-    this.mainWindow.loadURL('file:///' + path.join(__dirname, '..', 'static', 'index.html'))
-    // this.mainWindow.webContents.openDevTools()
+    this.mainWindow.loadURL('file:///' + path.join(__dirname, 'index.html'))
+    this.mainWindow.webContents.openDevTools()
   }
 }
 

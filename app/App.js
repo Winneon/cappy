@@ -10,8 +10,8 @@ class App {
     this.electron = electron
     this.app = electron.app
 
-    this.tray = new Tray()
     this.window = new Window()
+    this.tray = new Tray(this)
   }
 
   register (listener, obj) {
