@@ -1,7 +1,12 @@
 div.titlebar {
-	background-color: #F6F6F6;
+	background: linear-gradient(0deg, #D2D0D2, #E8E6E8);
 	border-bottom: 1px solid $borderColor;
 	width: 100%;
-	height: 36px;
+	height: 37px;
 	-webkit-app-region: drag;
+
+	&.blur {
+    background: #F6F6F6;
+		border-color: $inactiveBorderColor;
+  }
 }

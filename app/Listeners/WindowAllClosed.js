@@ -9,6 +9,7 @@ class WindowAllClosed extends Listener {
 
   onEvent (app) {
     if (process.platform === 'darwin') {
+      app.window.mainWindow = undefined
       app.app.dock.hide()
     }
   }

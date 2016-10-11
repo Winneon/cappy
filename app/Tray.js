@@ -25,7 +25,16 @@ class Tray {
         type: 'separator'
       },
       {
-        type: 'normal', label: 'Preferences'
+        type: 'normal', label: 'Preferences',
+        click: () => {
+          if (!app.window.mainWindow){
+            app.window.create()
+
+            if (process.platform === 'darwin') {
+              app.app.dock.show()
+            }
+          }
+        }
       },
       {
         type: 'separator'

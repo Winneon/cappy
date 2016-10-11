@@ -10,7 +10,7 @@ class Window {
       resizable: false,
       show: false,
       title: 'cappy',
-      width: 800,
+      width: 400,
       height: 400
     }
 
@@ -22,7 +22,15 @@ class Window {
 
     this.mainWindow = new BrowserWindow(opts)
     this.mainWindow.loadURL('file:///' + path.join(__dirname, 'index.html'))
-    this.mainWindow.webContents.openDevTools()
+
+    this.mainWindow.on('focus', () => this.mainWindow.webContents.send('focus', true))
+    this.mainWindow.on('blur', () => this.mainWindow.webContents.send('focus', false))
+
+    if (process.env.NODE_ENV === 'development') {
+      this.mainWindow.webContents.openDevTools({
+        detach: true
+      })
+    }
   }
 }
 

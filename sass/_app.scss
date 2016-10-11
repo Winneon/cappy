@@ -1,0 +1,58 @@
+label {
+  display: block;
+
+  & > span {
+    padding-left: 2px;
+  }
+}
+
+div.app {
+  background-color: #ECECEC;
+  box-sizing: border-box;
+  width: 100%;
+  height: calc(100% - 38px);
+  padding: 20px;
+
+  div.block {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 15px;
+    font-size: 0px;
+
+    &:first-of-type {
+      padding-top: 0px;
+    }
+
+    &:last-of-type {
+      padding-bottom: 0px;
+    }
+
+    & > div {
+      display: inline-block;
+      font: menu;
+    }
+
+    div.labels {
+      box-sizing: border-box;
+      width: 37.5%;
+      padding-right: 4px;
+      text-align: right;
+
+      span:after {
+        content: ":";
+      }
+    }
+
+    div.inputs {
+      box-sizing: border-box;
+      width: calc(100% - 37.5%);
+      padding-left: 4px;
+    }
+  }
+
+  div.separator {
+    background-color: $separatorColor;
+    width: 100%;
+    height: 1px;
+  }
+}
